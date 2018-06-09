@@ -6,63 +6,52 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./multiplos.component.css']
 })
 export class MultiplosComponent implements OnInit {
-
-  numerouno: string = "";
-  numerodos: string = "";
-  one: string = "";
-  division: number;
-  divisiono: number;
-  final: String = "";
-  oneo = new Array;
-  inicial: number;
-  index: number;
+  public numerouno: string = "";
+  public numerodos: string = "";
+  public one: string = "";
+  public division: number;
+  public divisiono: number;
+  public final: String = "";
+  public oneo: any[] = [];
+  public inicial: number;
+  public index: number;
 
   generate() {
-
     this.oneo = [];
     this.index = 0;
-    this.numerodos = (parseFloat(this.numerouno) + 100).toString();
+    this.numerodos = (parseFloat(this.numerouno) + 99).toString();
 
     for (var i = 0; i < 100; i++) {
 
-      this.one = (parseFloat(this.numerouno) + this.index).toString();
+      this.one = (parseFloat(this.numerouno) + i).toString();
       this.division = (parseFloat(this.one) % 3);
       this.divisiono = (parseFloat(this.one) % 5);
 
       if ((this.division === 0) && (this.divisiono === 0)) {
         this.one = "FIZZ-BUZZ";
-
       }
       else {
         if (this.division === 0) {
           this.one = "FIZZ";
         }
+        if (this.divisiono === 0) {
+          this.one = "BUZZ";
+        }
         else {
-          if (this.divisiono === 0) {
-            this.one = "BUZZ";
-          }
-          else {
-            this.one = this.one;
-
-          }
+          this.one = this.one;
 
         }
-
       }
-      this.oneo.push(this.one);
-      console.log(this.one);
-      this.index = this.index + 1;
+      this.oneo.push({ result: this.one });
     }
-
   }
 
   clear() {
-
     this.oneo = [];
     this.numerouno = "";
     this.numerodos = "";
-
   }
+  
   constructor() { }
 
   ngOnInit() {
