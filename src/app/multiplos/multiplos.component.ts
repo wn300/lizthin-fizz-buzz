@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ResultSharedService } from '../services/result-shared.service';
 
 @Component({
   selector: 'app-multiplos',
@@ -15,6 +16,12 @@ export class MultiplosComponent implements OnInit {
   public oneo: any[] = [];
   public inicial: number;
   public index: number;
+
+
+  constructor(public resultSharedService: ResultSharedService) { }
+
+  ngOnInit() {
+  }
 
   generate() {
     this.oneo = [];
@@ -44,6 +51,7 @@ export class MultiplosComponent implements OnInit {
       }
       this.oneo.push({ result: this.one });
     }
+    this.resultSharedService.setVariable(this.oneo);    
   }
 
   clear() {
@@ -51,9 +59,5 @@ export class MultiplosComponent implements OnInit {
     this.numerouno = "";
     this.numerodos = "";
   }
-  
-  constructor() { }
 
-  ngOnInit() {
-  }
 }

@@ -71,20 +71,10 @@
       <button (click)="clear()" type="button" class="btn btn-block btn-warning">Clear</button>
     </div>
   </div>
-
-  <div class="row margenes margenes justify-content-md-center" *ngFor="let gunter of oneo; let i = index">
-    <div class="col-2 justify-content-md-center">
-      <div class="alert alert-danger" role="alert">
-        {{i + 1}}
-      </div>
-    </div>
-    <div class="col-2 justify-content-md-center">
-      <div class="alert alert-success" role="alert">
-        {{gunter.result}}
-      </div>
-    </div>
-  </div>
+  
 </div>
+
+<app-modal></app-modal>
 
 <footer class="fondonav fixed-bottom">
   creado por liza

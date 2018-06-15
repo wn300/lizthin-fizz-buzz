@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { MultiplosComponent } from './multiplos/multiplos.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalComponent } from './modal/modal.component';
+import { ResultSharedService } from './services/result-shared.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +16,7 @@ import { ModalComponent } from './modal/modal.component';
     BrowserModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [ResultSharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
