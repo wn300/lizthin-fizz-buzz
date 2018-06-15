@@ -1,6 +1,6 @@
 <!-- Button trigger modal -->
 <button id="btn_modal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_result_fb" style="display: none">
-  Launch demo modal
+  Lista solucion
 </button>
 
 <!-- Modal -->
@@ -8,14 +8,14 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Lista de clase</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <div style="height: 400px; overflow-y: auto; overflow-x: hidden">
-          <div class="row margenes margenes justify-content-md-center" *ngFor="let gunter of respuestaServicioCompartido; let i = index">
+          <div class="row margenes margenes justify-content-md-center" *ngFor="let fizzbuzz of respuestaServicioCompartido; let i = index">
             <div class="col-3 justify-content-md-center">
               <div class="alert alert-danger" role="alert">
                 {{i + 1}}
@@ -23,16 +23,15 @@
             </div>
             <div class="col-5 justify-content-md-center">
               <div class="alert alert-success" role="alert">
-                {{gunter.result}}
+                {{fizzbuzz.result}}
               </div>
             </div>
           </div>
         </div>
 
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+      <div class="modal-footer letraregular">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>

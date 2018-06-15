@@ -16,6 +16,8 @@ export class MultiplosComponent implements OnInit {
   public oneo: any[] = [];
   public inicial: number;
   public index: number;
+  public cantidad: any[] = [];
+  public longitud: number;
 
 
   constructor(public resultSharedService: ResultSharedService) { }
@@ -26,6 +28,7 @@ export class MultiplosComponent implements OnInit {
   generate() {
     this.oneo = [];
     this.index = 0;
+    this.cantidad = [];
     this.numerodos = (parseFloat(this.numerouno) + 99).toString();
 
     for (var i = 0; i < 100; i++) {
@@ -33,7 +36,8 @@ export class MultiplosComponent implements OnInit {
       this.one = (parseFloat(this.numerouno) + i).toString();
       this.division = (parseFloat(this.one) % 3);
       this.divisiono = (parseFloat(this.one) % 5);
-
+      this.cantidad = (this.one.split('');
+      console.log(this.cantidad)
       if ((this.division === 0) && (this.divisiono === 0)) {
         this.one = "FIZZ-BUZZ";
       }
@@ -45,8 +49,15 @@ export class MultiplosComponent implements OnInit {
           this.one = "BUZZ";
         }
         else {
+          this.cantidad.forEach((data:any) {
+            if (data === '5') {
+              this.one = "BUZZ";
+            }
+            if (data === '3'){
+              this.one = "FIZZ";
+            }
+          })
           this.one = this.one;
-
         }
       }
       this.oneo.push({ result: this.one });
