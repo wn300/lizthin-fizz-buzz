@@ -36,8 +36,8 @@ export class MultiplosComponent implements OnInit {
       this.one = (parseFloat(this.numerouno) + i).toString();
       this.division = (parseFloat(this.one) % 3);
       this.divisiono = (parseFloat(this.one) % 5);
-      this.cantidad = (this.one.split('');
-      console.log(this.cantidad)
+      this.cantidad = this.one.split('');
+      
       if ((this.division === 0) && (this.divisiono === 0)) {
         this.one = "FIZZ-BUZZ";
       }
@@ -49,7 +49,7 @@ export class MultiplosComponent implements OnInit {
           this.one = "BUZZ";
         }
         else {
-          this.cantidad.forEach((data:any) {
+          this.cantidad.forEach((data:any) => {
             if (data === '5') {
               this.one = "BUZZ";
             }
